@@ -3,10 +3,19 @@ import java.util.List;
 
 public abstract class Cargo {
     protected String nome;
+    protected Cargo superior; // cargo acima na hierarquia
     protected List<TipoDocumento> documentosResponsaveis = new ArrayList<>();
 
     public Cargo(String nome) {
         this.nome = nome;
+    }
+
+    public void setSuperior(Cargo superior) {
+        this.superior = superior;
+    }
+
+    public Cargo getSuperior() {
+        return superior;
     }
 
     public void adicionarDocumento(TipoDocumento doc) {
@@ -22,3 +31,4 @@ public abstract class Cargo {
         return documentosResponsaveis;
     }
 }
+
